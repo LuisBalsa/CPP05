@@ -6,7 +6,7 @@
 /*   By: luide-so <luide-so@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 13:01:31 by luide-so          #+#    #+#             */
-/*   Updated: 2024/07/21 02:05:38 by luide-so         ###   ########.fr       */
+/*   Updated: 2024/07/21 02:39:54 by luide-so         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,23 +38,52 @@ void	pressEnter(void)
 	std::cout << "\033[2J\033[1;1H";
 }
 
+void	testInternFail(void)
+{
+	titleHeader("Test Intern Fail");
+	Intern intern;
+	AForm *form;
+
+	form = intern.makeForm("certification", "Balsa");
+	if (form)
+	{
+		std::cout << *form << std::endl;
+		delete form;
+	}
+	pressEnter();
+}
+
 void	testIntern(void)
 {
 	titleHeader("Test Intern");
 	Intern intern;
 	AForm *form;
 
-	form = intern.makeForm("robotomy request", "Bender");
+	form = intern.makeForm("robotomy request", "Balsa");
 	if (form)
 	{
-		std::cout << *form;
+		std::cout << *form << std::endl;
 		delete form;
 	}
+	form = intern.makeForm("presidential pardon", "Balsa");
+	if (form)
+	{
+		std::cout << *form << std::endl;
+		delete form;
+	}
+	form = intern.makeForm("shrubbery creation", "Balsa");
+	if (form)
+	{
+		std::cout << *form << std::endl;
+		delete form;
+	}
+	pressEnter();
 }
 
 int main(void)
 {
 	std::cout << "\033[2J\033[1;1H";
 	testIntern();
+	testInternFail();
 	return (0);
 }
