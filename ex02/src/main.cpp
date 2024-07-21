@@ -6,7 +6,7 @@
 /*   By: luide-so <luide-so@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 13:01:31 by luide-so          #+#    #+#             */
-/*   Updated: 2024/07/21 00:52:54 by luide-so         ###   ########.fr       */
+/*   Updated: 2024/07/21 01:22:10 by luide-so         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ void	testShrubberyCreationFormFail(void)
 	pressEnter();
 }
 
-/* void	testRobotomyRequestForm(void)
+void	testRobotomyRequestForm(void)
 {
 	titleHeader("Testing Robotomy");
 	RobotomyRequestForm form("Balsa");
@@ -100,9 +100,9 @@ void	testRobotomyRequestFormFail(void)
 	std::cout << "\nExecuting the form with a bureaucrat with grade 46:" << std::endl;
 	trump.executeForm(form);
 	pressEnter();
-} */
+}
 
-/* void	testPresidentialPardonForm(void)
+void	testPresidentialPardonForm(void)
 {
 	titleHeader("Testing Presidential");
 	PresidentialPardonForm form("Balsa");
@@ -131,15 +131,15 @@ void	testPresidentialPardonFormFail(void)
 	std::cout << "\nExecuting the form with a bureaucrat with grade 6:" << std::endl;
 	trump.executeForm(form);
 	pressEnter();
-} */
+}
 
 int main(void)
 {
 	std::cout << "\033[2J\033[1;1H";
-/* 	testPresidentialPardonForm();
-	testPresidentialPardonFormFail(); */
-/* 	testRobotomyRequestForm();
-	testRobotomyRequestFormFail(); */
+	testPresidentialPardonForm();
+	testPresidentialPardonFormFail();
+	testRobotomyRequestForm();
+	testRobotomyRequestFormFail();
 	testShrubberyCreationForm();
 	testShrubberyCreationFormFail();
 	return (0);
