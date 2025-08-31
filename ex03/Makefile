@@ -6,7 +6,7 @@
 #    By: luide-so <luide-so@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/26 13:02:10 by luide-so          #+#    #+#              #
-#    Updated: 2024/07/21 02:12:01 by luide-so         ###   ########.fr        #
+#    Updated: 2024/07/21 04:34:11 by luide-so         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,16 +26,19 @@ CC = c++
 
 FLAGS = -Wall -Wextra -Werror -pedantic -std=c++98
 
+UP = "\033[A"
+CUT = "\033[K"
+
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME) -I $(DEPS_PATH)
-
-	echo "$(NAME) compiled!"
+	@$(CC) $(FLAGS) $(OBJ) -o $(NAME) -I $(DEPS_PATH)
+	@echo "Compiling" $(NAME) "done"
 
 $(OBJ_PATH)%.o: %.cpp $(DEPS)
 	@mkdir -p $(OBJ_PATH)
 	$(CC) $(FLAGS) -c $< -o $@ -I $(DEPS_PATH)
+	@echo -n $(UP)$(CUT)
 
 clean:
 	rm -rf $(OBJ_PATH)
